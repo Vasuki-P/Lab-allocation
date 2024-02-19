@@ -1,0 +1,76 @@
+.body{
+    background: #45b3f3;
+}
+.h{
+text-align: center;
+width: 970px;
+height: 71px;
+flex-shrink: 0;
+color: #000;
+font-family: Inter;
+font-size: 35px;
+font-style: normal;
+font-weight: 700;
+line-height: normal;
+}
+.box_text{
+color: #000;
+font-family: Inter;
+font-size: 10px;
+font-style: normal;
+font-weight: 300;
+line-height: normal;
+}
+.exam{
+/* text-align: center; */
+color: #000;
+font-family: Inter;
+font-size: 17px;
+font-style: normal;
+}
+.exam1{
+    text-align: left;
+    color: #000;
+    font-family: Inter;
+    font-size: 15px;
+    font-style: normal;
+    }
+.bttn{
+ 
+text-align:center;
+width: 150px;
+height: 75px;
+flex-shrink: 0;
+border-radius: 50px;
+background: #D9D9D9;
+}
+.l{
+    width: 200px;
+    display: inline-block;
+}
+.styled-button {
+    display: inline-block;
+    padding: 4px 20px;
+    font-size: 16px;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    outline: none;
+    border: 1px solid black;
+    color:black;
+    background-color: #fff;
+    border-radius: 5px;
+    transition: background-color 0.3s, color 0.3s;
+}
+.styled-button:hover {
+    background-color: rgb(248, 87, 87);
+    color: #fff;
+}
+.boxborder{
+    background-color:#cde0ebaa;
+    width: 900px;
+    border: 1px solid black;
+    padding: 10px;
+    margin: 20px;
+
+}

@@ -1,0 +1,610 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab Allotment</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="lab.css">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <style type="text/css">
+        .input-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .lab-input {
+            width: 150px; 
+             margin-bottom: 10px;
+        }
+        label{
+            text-align: left;
+            width: 300px;
+            display: inline-block;
+        }
+        
+    </style>
+</head>
+<body class="body ">
+    <img src="cit.png" width="350" height="100">
+    <h1 class="h">Controller of Examination (COE)</h1>
+    <div class="box_text">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <a class="navbar-brand" href="lab.html">HOME</a>
+            <div class="dropdown">
+                <button class="btn dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown"
+                        aria-haspopup="true" aria-expanded="false">
+                    EXAMINATION
+                </button>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                    <a class="dropdown-item " href="practical.html">PRACTICAL</a>
+                    <a class="dropdown-item " href="#">THEORY</a>
+                </div>
+            </div>
+            
+            <a class="navbar-brand" href="squad.html">SQUAD</a>
+            <a class="navbar-brand" href="report.html">REPORT</a>
+        </nav>
+    </div>
+    <br>
+    
+    <div class="exam container-fluid">
+        <form method="post">
+            <label for="year">Year/Semester </label>
+            <select style="width: 215px; height: 30px;" id="year" name="year" onchange="applyFilter()">
+                <option value="" disabled selected></option>
+                <option value="1">I / I</option>
+                <option value="2">I / II</option>
+                <option value="3">II / III</option>
+                <option value="4">II / IV</option>
+                <option value="5">III / V</option>
+                <option value="6">III / VI</option>
+                <option value="7">IV / VII</option>
+                <option value="8">IV / VIII</option>
+            </select>
+            <br>
+            <label for="dept">Degree/Brach </label>
+            <select style="width: 215px; height: 30px;" id="dept" name="dept" onchange="applyFilter()">
+                <option value="" disabled selected></option>
+                <option value="aiml">B.E-CSE (AIML)</option>
+                <option value="cs">B.E-CSE (CS)</option>
+                <option value="eee">B.E-EEE</option>
+                <option value="ece">B.E-ECE</option>
+                <option value="mech">B.E-Mech</option>
+                <option value="mct">B.E-MCT</option>
+                <option value="bme">B.E-BME</option>
+                <option value="civil">B.E-CIVIL</option>
+                <option value="aids">B.Tech-AIDS</option>
+                <option value="csbs">B.Tech-CSBS</option>
+                <option value="it">B.Tech-IT</option>
+            </select>
+            <br>
+            
+            
+            <!-- Subject Name Fields -->
+            <div class="input-container">
+            <div id="subjectFields" class="hidden"></div>
+            </div>
+            <!-- Date Picker Fields -->
+            <div class="input-containe">
+            <div id="datePickerFields" class="hidden"></div>
+            </div>
+        </form>
+    </div>
+        
+    <script>
+        function applyFilter() {
+            var year = document.getElementById('year').value;
+            var dept = document.getElementById('dept').value;
+            var subjectFields = document.getElementById('subjectFields');
+            var datePickerFields = document.getElementById('datePickerFields');
+    
+            // Clear previous content
+            subjectFields.innerHTML = "";
+            datePickerFields.innerHTML = "";
+    
+    switch (`${year}-${dept}`) {
+        case '1-aiml':
+            createFields(subjectFields, datePickerFields, ['Cybersecurity', 'Python']);
+            break;
+        case '1-cs':
+            createFields(subjectFields, datePickerFields, ['Cybersecurity', 'Python']);
+            break;
+        case '1-eee':
+            createFields(subjectFields, datePickerFields, ['Cybersecurity', 'Python']);
+            break;
+        case '1-ece':
+            createFields(subjectFields, datePickerFields, ['Cybersecurity', 'Python']);
+            break;
+        case '1-mech':
+            createFields(subjectFields, datePickerFields, ['Cybersecurity', 'Python']);
+            break;
+        case '1-mct':
+            createFields(subjectFields, datePickerFields, ['Cybersecurity', 'Python']);
+            break;
+        case '1-bme':
+            createFields(subjectFields, datePickerFields, ['Cybersecurity', 'Python']);
+            break;
+        case '1-civil':
+            createFields(subjectFields, datePickerFields, ['Cybersecurity', 'Python']);
+            break;
+        case '1-aids':
+            createFields(subjectFields, datePickerFields, ['Cybersecurity', 'Python']);
+            break;
+        case '1-csbs':
+            createFields(subjectFields, datePickerFields, ['Cybersecurity', 'Python']);
+            break;
+        case '1-it':
+            createFields(subjectFields, datePickerFields, ['Cybersecurity', 'Python']);
+            break;
+        case '2-aiml':
+            createFields(subjectFields, datePickerFields, ['Cybersecurity', 'Python']);
+            break;
+        case '2-cs':
+            createFields(subjectFields, datePickerFields, ['Cybersecurity', 'Python']);
+            break;
+        case '2-eee':
+            createFields(subjectFields, datePickerFields, ['Cybersecurity', 'Python']);
+            break;
+        case '2-ece':
+            createFields(subjectFields, datePickerFields, ['Cybersecurity', 'Python']);
+            break;
+        case '2-mech':
+            createFields(subjectFields, datePickerFields, ['Cybersecurity', 'Python']);
+            break;
+        case '2-mct':
+            createFields(subjectFields, datePickerFields, ['Cybersecurity', 'Python']);
+            break;
+        case '2-bme':
+            createFields(subjectFields, datePickerFields, ['Cybersecurity', 'Python']);
+            break;
+        case '2-civil':
+            createFields(subjectFields, datePickerFields, ['Cybersecurity', 'Python']);
+            break;
+        case '2-aids':
+            createFields(subjectFields, datePickerFields, ['Cybersecurity', 'Python']);
+            break;
+        case '2-csbs':
+            createFields(subjectFields, datePickerFields, ['Cybersecurity', 'Python']);
+            break;
+        case '2-it':
+            createFields(subjectFields, datePickerFields, ['Cybersecurity', 'Python']);
+            break;
+        case '3-aiml':
+            createFields(subjectFields, datePickerFields, ['Cybersecurity', 'Python']);
+            break;
+        case '3-cs':
+            createFields(subjectFields, datePickerFields, ['Cybersecurity', 'Python']);
+            break;
+        case '3-eee':
+            createFields(subjectFields, datePickerFields, ['Cybersecurity', 'Python']);
+            break;
+        case '3-ece':
+            createFields(subjectFields, datePickerFields, ['Cybersecurity', 'Python']);
+            break;
+        case '3-mech':
+            createFields(subjectFields, datePickerFields, ['Cybersecurity', 'Python']);
+            break;
+        case '3-mct':
+            createFields(subjectFields, datePickerFields, ['Cybersecurity', 'Python']);
+            break;
+        case '3-bme':
+            createFields(subjectFields, datePickerFields, ['Cybersecurity', 'Python']);
+            break;
+        case '3-civil':
+            createFields(subjectFields, datePickerFields, ['Cybersecurity', 'Python']);
+            break;
+        case '3-aids':
+            createFields(subjectFields, datePickerFields, ['Cybersecurity', 'Python']);
+            break;
+        case '3-csbs':
+            createFields(subjectFields, datePickerFields, ['Cybersecurity', 'Python']);
+            break;
+        case '3-it':
+            createFields(subjectFields, datePickerFields, ['Cybersecurity', 'Python']);
+            break;
+        case '4-aiml':
+            createFields(subjectFields, datePickerFields, ['Cybersecurity', 'Python']);
+            break;
+        case '4-cs':
+            createFields(subjectFields, datePickerFields, ['Cybersecurity', 'Python']);
+            break;
+        case '4-eee':
+            createFields(subjectFields, datePickerFields, ['Cybersecurity', 'Python']);
+            break;
+        case '4-ece':
+            createFields(subjectFields, datePickerFields, ['Cybersecurity', 'Python']);
+            break;
+        case '4-mech':
+            createFields(subjectFields, datePickerFields, ['Cybersecurity', 'Python']);
+            break;
+        case '4-mct':
+            createFields(subjectFields, datePickerFields, ['Cybersecurity', 'Python']);
+            break;
+        case '4-bme':
+            createFields(subjectFields, datePickerFields, ['Cybersecurity', 'Python']);
+            break;
+        case '4-civil':
+            createFields(subjectFields, datePickerFields, ['Cybersecurity', 'Python']);
+            break;
+        case '4-aids':
+            createFields(subjectFields, datePickerFields, ['Cybersecurity', 'Python']);
+            break;
+        case '4-csbs':
+            createFields(subjectFields, datePickerFields, ['Cybersecurity', 'Python']);
+            break;
+        case '4-it':
+            createFields(subjectFields, datePickerFields, ['Cybersecurity', 'Python']);
+            break;
+        case '5-aiml':
+            createFields(subjectFields, datePickerFields, ['Cybersecurity', 'Python']);
+            break;
+        case '5-cs':
+            createFields(subjectFields, datePickerFields, ['Cybersecurity', 'Python']);
+            break;
+        case '5-eee':
+            createFields(subjectFields, datePickerFields, ['Cybersecurity', 'Python']);
+            break;
+        case '5-ece':
+            createFields(subjectFields, datePickerFields, ['Cybersecurity', 'Python']);
+            break;
+        case '5-mech':
+            createFields(subjectFields, datePickerFields, ['Cybersecurity', 'Python']);
+            break;
+        case '5-mct':
+            createFields(subjectFields, datePickerFields, ['Cybersecurity', 'Python']);
+            break;
+        case '5-bme':
+            createFields(subjectFields, datePickerFields, ['Cybersecurity', 'Python']);
+            break;
+        case '5-civil':
+            createFields(subjectFields, datePickerFields, ['Cybersecurity', 'Python']);
+            break;
+        case '5-aids':
+            createFields(subjectFields, datePickerFields, ['Cybersecurity', 'Python']);
+            break;
+        case '5-csbs':
+            createFields(subjectFields, datePickerFields, ['Cybersecurity', 'Python']);
+            break;
+        case '5-it':
+            createFields(subjectFields, datePickerFields, ['Cybersecurity', 'Python']);
+            break;
+        case '6-aiml':
+            createFields(subjectFields, datePickerFields, ['Cybersecurity', 'Python']);
+            break;
+        case '6-cs':
+            createFields(subjectFields, datePickerFields, ['Cybersecurity', 'Python']);
+            break;
+        case '6-eee':
+            createFields(subjectFields, datePickerFields, ['Cybersecurity', 'Python']);
+            break;
+        case '6-ece':
+            createFields(subjectFields, datePickerFields, ['Cybersecurity', 'Python']);
+            break;
+        case '6-mech':
+            createFields(subjectFields, datePickerFields, ['Cybersecurity', 'Python']);
+            break;
+        case '6-mct':
+            createFields(subjectFields, datePickerFields, ['Cybersecurity', 'Python']);
+            break;
+        case '6-bme':
+            createFields(subjectFields, datePickerFields, ['Cybersecurity', 'Python']);
+            break;
+        case '6-civil':
+            createFields(subjectFields, datePickerFields, ['Cybersecurity', 'Python']);
+            break;
+        case '6-aids':
+            createFields(subjectFields, datePickerFields, ['Cybersecurity', 'Python']);
+            break;
+        case '6-csbs':
+            createFields(subjectFields, datePickerFields, ['Cybersecurity', 'Python']);
+            break;
+        case '6-it':
+            createFields(subjectFields, datePickerFields, ['Cybersecurity', 'Python']);
+            break;
+        case '7-aiml':
+            createFields(subjectFields, datePickerFields, ['Cybersecurity', 'Python']);
+            break;
+        case '7-cs':
+            createFields(subjectFields, datePickerFields, ['Cybersecurity', 'Python']);
+            break;
+        case '7-eee':
+            createFields(subjectFields, datePickerFields, ['Cybersecurity', 'Python']);
+            break;
+        case '7-ece':
+            createFields(subjectFields, datePickerFields, ['Cybersecurity', 'Python']);
+            break;
+        case '7-mech':
+            createFields(subjectFields, datePickerFields, ['Cybersecurity', 'Python']);
+            break;
+        case '7-mct':
+            createFields(subjectFields, datePickerFields, ['Cybersecurity', 'Python']);
+            break;
+        case '7-bme':
+            createFields(subjectFields, datePickerFields, ['Cybersecurity', 'Python']);
+            break;
+        case '7-civil':
+            createFields(subjectFields, datePickerFields, ['Cybersecurity', 'Python']);
+            break;
+        case '7-aids':
+            createFields(subjectFields, datePickerFields, ['Cybersecurity', 'Python']);
+            break;
+        case '7-csbs':
+            createFields(subjectFields, datePickerFields, ['Cybersecurity', 'Python']);
+            break;
+        case '7-it':
+            createFields(subjectFields, datePickerFields, ['Cybersecurity', 'Python']);
+            break;
+        case '8-aiml':
+            createFields(subjectFields, datePickerFields, ['Cybersecurity', 'Python']);
+            break;
+        case '8-cs':
+            createFields(subjectFields, datePickerFields, ['Cybersecurity', 'Python']);
+            break;
+        case '8-eee':
+            createFields(subjectFields, datePickerFields, ['Cybersecurity', 'Python']);
+            break;
+        case '8-ece':
+            createFields(subjectFields, datePickerFields, ['Cybersecurity', 'Python']);
+            break;
+        case '8-mech':
+            createFields(subjectFields, datePickerFields, ['Cybersecurity', 'Python']);
+            break;
+        case '8-mct':
+            createFields(subjectFields, datePickerFields, ['Cybersecurity', 'Python']);
+            break;
+        case '8-bme':
+            createFields(subjectFields, datePickerFields, ['Cybersecurity', 'Python']);
+            break;
+        case '8-civil':
+            createFields(subjectFields, datePickerFields, ['Cybersecurity', 'Python']);
+            break;
+        case '8-aids':
+            createFields(subjectFields, datePickerFields, ['Cybersecurity', 'Python']);
+            break;
+        case '8-csbs':
+            createFields(subjectFields, datePickerFields, ['Cybersecurity', 'Python']);
+            break;
+        case '8-it':
+            createFields(subjectFields, datePickerFields, ['Cybersecurity', 'Python']);
+            break;
+                
+    
+                default:
+                    subjectFields.classList.add('hidden');
+                    datePickerFields.classList.add('hidden');
+            }
+        }
+    
+        function createFields(subjectFields, datePickerFields, subjects) {
+            for (let i = 0; i < subjects.length; i++) {
+                // Container for each lab and date pair
+                const labContainer = document.createElement('div');
+                labContainer.setAttribute('class', 'lab-container');
+    
+                // Static Subject Name
+                const staticSubjectName = document.createElement('label');
+                staticSubjectName.innerText = `${subjects[i]}:`;
+                staticSubjectName.setAttribute('class', 'static-subject-name');
+                labContainer.appendChild(staticSubjectName);
+    
+                // Date Picker Fields
+                const dateInput = document.createElement('input');
+                dateInput.setAttribute('type', 'date');
+                dateInput.setAttribute('class', 'lab-input');
+                dateInput.setAttribute('id', `date${i + 1}`);
+                dateInput.setAttribute('name', `date${i + 1}`);
+                labContainer.appendChild(dateInput);
+    
+                // Append the lab and date pair to respective containers
+                subjectFields.appendChild(labContainer);
+            }
+    
+            subjectFields.classList.remove('hidden');
+            datePickerFields.classList.remove('hidden');
+        }
+    </script>
+    <div class="exam container-fluid">
+    <label for="from_reg">Enter From Reg No </label>
+    <input type="text" id="from_reg" name="from_reg" placeholder="From-reg">
+    <br>
+    <label for="to_reg">Enter To Reg No </label>
+    <input type="text" id="to_reg" name="to_reg" placeholder="To-Reg">
+    <br>
+    <label for="capacity">Enter Capacity of each Lab </label>
+    <input type="text" id="capacity" name="capacity" placeholder="capacity">
+    <button class="styled-button" type="button" onclick="calculateResult()">Apply</button>
+    </div>
+
+    <div id="result" style="text-align: left; color: red; font-size: 20px;">
+        <p id="calculationResult"></p>
+    </div>
+<script>
+function calculateResult() {
+            const from_reg = parseFloat(document.getElementById('from_reg').value);
+            const to_reg = parseFloat(document.getElementById('to_reg').value);
+            const capacity = parseFloat(document.getElementById('capacity').value);
+
+            if (isNaN(from_reg) || isNaN(to_reg) || isNaN(capacity)) {
+                document.getElementById('calculationResult').innerText = 'Please enter valid numbers.';
+            } else {
+                const numerator = to_reg - from_reg + 1;
+                const result = Math.floor(numerator / capacity);
+                document.getElementById('calculationResult').innerText = ` ${result} labs are required `;
+            }
+        }
+</script>
+<div class="exam ">
+<div class="container-fluid"><button class="styled-button" onclick="displayLabs()">Display Labs</button></div>
+<div id="labsContainer" style="font-size: 17px;"></div>
+<script>
+    function displayLabs() {
+        var departmentInput = document.getElementById('dept').value;
+        var department = departmentInput.toLowerCase();
+        var labsContainer = document.getElementById('labsContainer');
+        labsContainer.innerHTML = "";
+        switch (department) {
+            case 'aiml':
+                generateLabCheckbox(labsContainer, 'Python Lab');
+                generateLabCheckbox(labsContainer, 'Mobile app Lab');
+                generateLabCheckbox(labsContainer, 'Security Lab');
+                break;
+            case 'cs':
+                generateLabCheckbox(labsContainer, 'Python Lab');
+                generateLabCheckbox(labsContainer, 'Mobile App Lab');
+                generateLabCheckbox(labsContainer, 'Security Lab');
+                generateLabCheckbox(labsContainer, 'Java Lab');
+                break;
+            case 'eee':
+                generateLabCheckbox(labsContainer, 'LabX');
+                generateLabCheckbox(labsContainer, 'LabY');
+                generateLabCheckbox(labsContainer, 'LabZ');
+                break;
+            case 'ece':
+                generateLabCheckbox(labsContainer, 'Lab1');
+                generateLabCheckbox(labsContainer, 'Lab2');
+                generateLabCheckbox(labsContainer, 'Lab3');
+                break;
+            case 'mech':
+                generateLabCheckbox(labsContainer, 'Lab1');
+                generateLabCheckbox(labsContainer, 'Lab2');
+                generateLabCheckbox(labsContainer, 'Lab3');
+                break;
+            case 'mct':
+                generateLabCheckbox(labsContainer, 'Lab1');
+                generateLabCheckbox(labsContainer, 'Lab2');
+                generateLabCheckbox(labsContainer, 'Lab3');
+                break;
+            case 'bme':
+                generateLabCheckbox(labsContainer, 'Lab1');
+                generateLabCheckbox(labsContainer, 'Lab2');
+                generateLabCheckbox(labsContainer, 'Lab3');
+                break;
+            case 'civil':
+                generateLabCheckbox(labsContainer, 'Lab1');
+                generateLabCheckbox(labsContainer, 'Lab2');
+                generateLabCheckbox(labsContainer, 'Lab3');
+                break;
+            case 'aids':
+                generateLabCheckbox(labsContainer, 'Lab1');
+                generateLabCheckbox(labsContainer, 'Lab2');
+                generateLabCheckbox(labsContainer, 'Lab3');
+                break;
+            case 'csbs':
+                generateLabCheckbox(labsContainer, 'Lab1');
+                generateLabCheckbox(labsContainer, 'Lab2');
+                generateLabCheckbox(labsContainer, 'Lab3');
+                break;
+            case 'it':
+                generateLabCheckbox(labsContainer, 'Lab1');
+                generateLabCheckbox(labsContainer, 'Lab2');
+                generateLabCheckbox(labsContainer, 'Lab3');
+                break;
+            default:
+                alert('Invalid department or labs not available for the selected department.');
+                break;
+        }
+    }
+
+    function generateLabCheckbox(container, labName) {
+        var checkbox = document.createElement('input');
+        checkbox.type = 'checkbox';
+        checkbox.id = labName;
+        checkbox.name = 'labs';
+
+        var label = document.createElement('label');
+        label.htmlFor = labName;
+        label.appendChild(document.createTextNode(labName));
+
+        container.appendChild(checkbox);
+        container.appendChild(label);
+        container.appendChild(document.createElement('br')); 
+    }
+</script>
+</div>
+
+<div class="exam1">
+    <br>
+    <h4>Internal details</h4>
+    <div class="container">
+        <div class="boxborder">
+            <form id="internalForm">
+                <label class="l" for="name">Name</label>
+                <input type="text" id="name" name="name" required>
+
+                <label class="l" for="staff-id">Staff-Id</label>
+                <input type="number" id="staff-id" name="staff-id" required>
+
+                <label class="l" for="mobile">Phone No</label>
+                <input type="number" id="mobile" name="mobile" required>
+
+                <label class="l" for="email">Email ID</label>
+                <input type="email" id="email" name="email" required>
+                <br>
+                <button class="styled-button" type="button" onclick="addInternalInput()">Add</button>
+            </form>
+        </div>
+    </div>
+    <h4>External details</h4>
+    <div class="container">
+        <div class="boxborder">
+            <form id="externalForm">
+                <label class="l" for="e_name">Name</label>
+                <input type="text" id="e_name" name="e_name" required>
+
+                <label class="l" for="e_staff-id">Staff-Id </label>
+                <input type="number" id="e_staff-id" name="e_staff-id" required>
+
+                <label class="l" for="e_mobile">Phone No</label>
+                <input type="number" id="e_mobile" name="e_mobile" required>
+
+                <label class="l" for="e_email">Email ID </label>
+                <input type="email" id="e_email" name="e_email" required>
+                <br>
+                <button class="styled-button" type="button" onclick="addExternalInput()">Add</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+<script>
+    function addInternalInput() {
+        var internalForm = document.getElementById('internalForm');
+        var newInput = createInputFields();
+
+        internalForm.insertBefore(newInput, internalForm.lastElementChild);
+    }
+
+    function addExternalInput() {
+        var externalForm = document.getElementById('externalForm');
+        var newInput = createInputFields();
+
+        externalForm.insertBefore(newInput, externalForm.lastElementChild);
+    }
+
+    function createInputFields() {
+        var newInput = document.createElement('div');
+        newInput.innerHTML = `
+            <label class="l" for="name">Name</label>
+            <input type="text" name="name[]" required>
+
+            <label class="l" for="staff-id">Staff-Id </label>
+            <input type="number" name="staff-id[]" required>
+
+            <label class="l" for="mobile">Phone No</label>
+            <input type="number" name="mobile[]" required>
+
+            <label class="l" for="email">Email ID </label>
+            <input type="email" name="email[]" required>
+        `;
+        return newInput;
+    }
+</script>
+
+<br>
+<br>
+</body>
+</html>
